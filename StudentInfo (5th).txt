@@ -1,0 +1,30 @@
+public class students {
+    String USN;
+    String Name;
+    String Phno;
+    String Branch;
+    float Percentage;
+
+    students(String USN, String Name, String Phno, String Branch, float Percentage) {
+        this.USN = USN;
+        this.Name = Name;
+        this.Phno = Phno;
+        this.Branch = Branch;
+        this.Percentage = Percentage;
+    }
+
+    void DisplayStudentInfo() {
+        System.out.println("USN = " + this.USN + " Name = " + this.Name + " BRANCH = " + this.Branch + " Phno = "
+                + this.Phno + " Percentage = " + this.Percentage);
+    }
+
+    public static void main(String[] args) {
+        students S1 = new students();
+        students S2 = new students();
+        students S3 = new students();
+        S1.DisplayStudentInfo();
+        S2.DisplayStudentInfo();
+        S3.DisplayStudentInfo();
+
+    }
+}

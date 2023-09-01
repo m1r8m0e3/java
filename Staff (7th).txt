@@ -1,0 +1,75 @@
+class Staff {
+    private int staffId;
+    private String name;
+    private String phone;
+    private float salary;
+
+    public Staff(int staffId, String name, String phone, float salary) {
+        this.staffId = staffId;
+        this.name = name;
+        this.phone = phone;
+        this.salary = salary;
+    }
+
+    public void display() {
+        System.out.println("Staff ID: " + staffId + " Name: " + name + " Phone: " + phone + " Salary: " + salary);
+    }
+}
+
+class Teaching extends Staff {
+    private String domain;
+    private int publications;
+
+    public Teaching(int staffId, String name, String phone, float salary, String domain, int publications) {
+        super(staffId, name, phone, salary);
+        this.domain = domain;
+        this.publications = publications;
+    }
+
+    public void display() {
+        super.display();
+        System.out.println("Domain: " + domain + " Publications: " + publications);
+    }
+}
+
+class Technical extends Staff {
+    private String skills;
+
+    public Technical(int staffId, String name, String phone, float salary, String skills) {
+        super(staffId, name, phone, salary);
+        this.skills = skills;
+    }
+
+    public void display() {
+        super.display();
+        System.out.println("Skills: " + skills);
+    }
+}
+
+class Contract extends Staff {
+    private int period;
+
+    public Contract(int staffId, String name, String phone, float salary, int period) {
+        super(staffId, name, phone, salary);
+        this.period = period;
+    }
+
+    public void display() {
+        super.display();
+        System.out.println("Period: " + period);
+    }
+}
+
+public class StaffDemo {
+    public static void main(String[] args) {
+        Staff[] staff = new Staff[3];
+        staff[0] = new Teaching(0001, "name", "1234567890", 10000, "CSE", 3);
+        staff[1] = new Technical(0002, "name", "1234567890", 10000, " Server Admin");
+        staff[2] = new Contract(0003, "name", "1234567890", 10000, 3);
+
+        for (int i = 0; i < 3; i++) {
+            staff[i].display();
+            System.out.println();
+        }
+    }
+}

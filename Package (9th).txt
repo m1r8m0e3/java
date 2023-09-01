@@ -1,0 +1,72 @@
+package P1;
+
+class A {
+    int a = 10;
+    public int b = 20;
+    private int c = 30;
+    protected int d = 40;
+}
+
+package P1;
+class B extends A{
+    B(){
+        System.out.println(a);
+        System.out.println(b);
+        //System.out.println(c);
+        System.out.println(d);
+    }
+}
+
+package P1;
+class c{
+    c(){
+        A ob = new A();
+        System.out.println(ob.a);
+        System.out.println(ob.b);
+        //System.out.println(ob.c);
+        System.out.println(ob.d);
+    }
+}
+package P1;
+public class Demo{
+    public static void main(String[] args) {
+        B ob1 = new B();
+        System.out.println("------------");
+        C ob2 = new C();
+    }
+}
+
+package P2;
+import P1.A;
+
+public class D extends A{
+    D(){
+        //System.out.println(a);
+        System.out.println(b);
+        //System.out.println(c);
+        System.out.println(d);
+    }
+}
+
+package P2;
+import P1.A;
+
+public class E{
+    e(){
+        A ob = new A();
+        //System.out.println(ob.a);
+        System.out.println(ob.b);
+        //System.out.println(ob.c);
+        //System.out.println(ob.d);
+    }
+}
+
+package P2;
+
+public class Demo {
+    public static void main(String[] args) {
+        D ob1 = new D();
+        System.out.println("----------");
+        E ob2 = new E();
+    }
+}

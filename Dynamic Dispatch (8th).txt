@@ -1,0 +1,43 @@
+public abstract class Figure1 {
+    double dim1;
+    double dim2;
+
+    Figure1(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+
+    abstract double area();
+}
+public class Rectangle extends Figure1 {
+    Rectangle(double a, double b) {
+        super(a, b);
+    }
+
+    double area() {
+        System.out.println("Inside area of rectangle");
+        return dim1 * dim2;
+    }
+}
+public class Triangle extends Figure1 {
+    Triangle(double a, double b) {
+        super(a, b);
+    }
+
+    double area() {
+        System.out.println("Inside area of triangle");
+        return (dim1 * dim2) / 2;
+    }
+}
+public class FindArea {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle(1, 2);
+        Triangle t = new Triangle(1, 4);
+        Figure1 figuref;
+        figuref = r;
+        System.out.println("Area is " + figuref.area());
+        figuref = t;
+        System.out.println("Area is " + figuref.area());
+    }
+
+}
